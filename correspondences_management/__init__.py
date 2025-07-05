@@ -1,0 +1,1 @@
+"""Correspondences Management app."""

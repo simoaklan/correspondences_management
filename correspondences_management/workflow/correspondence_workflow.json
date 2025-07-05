@@ -1,0 +1,21 @@
+{
+ "doctype": "Workflow",
+ "name": "Correspondence Workflow",
+ "document_type": "Correspondence",
+ "is_active": 1,
+ "workflow_state_field": "status",
+ "condition": "doc.correspondence_type == 'Outgoing'",
+ "states": [
+  {"state": "Draft", "doc_status": 0},
+  {"state": "For Approval", "doc_status": 0},
+  {"state": "Approved", "doc_status": 1},
+  {"state": "Rejected", "doc_status": 1},
+  {"state": "Sent", "doc_status": 1}
+ ],
+ "transitions": [
+  {"state": "Draft", "action": "Submit for Approval", "next_state": "For Approval"},
+  {"state": "For Approval", "action": "Approve", "next_state": "Approved", "allowed": "Correspondences Manager"},
+  {"state": "For Approval", "action": "Reject", "next_state": "Rejected", "allowed": "Correspondences Manager"},
+  {"state": "Approved", "action": "Mark as Sent", "next_state": "Sent"}
+ ]
+}

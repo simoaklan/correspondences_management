@@ -1,0 +1,10 @@
+{
+ "doctype": "Notification",
+ "name": "New Correspondence Assignment",
+ "document_type": "Correspondence",
+ "subject": "New Correspondence Assigned to You: {{ doc.name }}",
+ "message": "A new correspondence with the subject '{{ doc.subject }}' has been assigned to you. Please review.",
+ "event": "Value Change",
+ "value_changed": "assigned_to",
+ "recipients": [{"receiver_by_document_field": "assigned_to"}]
+}
