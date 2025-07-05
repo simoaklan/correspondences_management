@@ -1,0 +1,6 @@
+{
+ "doctype": "Client Script",
+ "name": "Correspondence-Client",
+ "dt": "Correspondence",
+ "script": "frappe.ui.form.on('Correspondence', {\n    correspondence_type(frm) {\n        if (frm.doc.correspondence_type === 'Incoming') {\n            frm.set_df_property('department', 'label', 'Receiving Department');\n        } else if (frm.doc.correspondence_type === 'Outgoing') {\n            frm.set_df_property('department', 'label', 'Sending Department');\n        } else {\n            frm.set_df_property('department', 'label', 'Department');\n        }\n    }\n});"
+}

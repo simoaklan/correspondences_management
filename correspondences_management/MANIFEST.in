@@ -1,0 +1,4 @@
+include MANIFEST.in
+include *.md
+recursive-include correspondences_management *.html *.js *.css *.py *.json
+recursive-include correspondences_management/templates *.html

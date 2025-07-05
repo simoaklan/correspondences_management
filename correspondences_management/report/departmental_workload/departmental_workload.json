@@ -1,0 +1,7 @@
+{
+ "doctype": "Report",
+ "name": "Departmental Workload",
+ "ref_doctype": "Correspondence",
+ "report_type": "Query Report",
+ "is_standard": "Yes"
+}

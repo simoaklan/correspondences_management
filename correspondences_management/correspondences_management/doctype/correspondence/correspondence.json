@@ -1,0 +1,44 @@
+{
+ "doctype": "DocType",
+ "name": "Correspondence",
+ "module": "Correspondences Management",
+ "custom": 0,
+ "autoname": "field:naming_series",
+ "naming_rule": "",
+ "fields": [
+  {"fieldname": "naming_series", "label": "Naming Series", "fieldtype": "Data", "default": "CORR-.YYYY.-.#####", "reqd": 1},
+
+  {"fieldtype": "Section Break", "fieldname": "primary_info", "label": ""},
+  {"fieldname": "correspondence_type", "label": "Correspondence Type", "fieldtype": "Select", "options": "Incoming\nOutgoing", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "subject", "label": "Subject", "fieldtype": "Data", "reqd": 1, "in_list_view": 1},
+  {"fieldtype": "Column Break"},
+  {"fieldname": "transaction_date", "label": "Date", "fieldtype": "Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nOpen\nReplied\nArchived\nClosed", "default": "Draft", "in_list_view": 1},
+
+  {"fieldtype": "Section Break", "label": "Parties"},
+  {"fieldname": "sender", "label": "From (Sender)", "fieldtype": "Data"},
+  {"fieldtype": "Column Break"},
+  {"fieldname": "recipient", "label": "To (Recipient)", "fieldtype": "Data"},
+  {"fieldtype": "Section Break"},
+  {"fieldname": "department", "label": "Department", "fieldtype": "Link", "options": "Department"},
+
+  {"fieldtype": "Section Break", "label": "Content and Action"},
+  {"fieldname": "content_summary", "label": "Content Summary", "fieldtype": "Text Editor"},
+  {"fieldname": "action_required", "label": "Action Required", "fieldtype": "Text"},
+  {"fieldname": "keywords", "label": "Keywords / Tags", "fieldtype": "Tag"},
+
+  {"fieldtype": "Section Break", "label": "Sidebar"},
+  {"fieldname": "assigned_to", "label": "Assigned To", "fieldtype": "Link", "options": "User", "in_list_view": 0},
+  {"fieldname": "due_date", "label": "Due Date", "fieldtype": "Date"},
+  {"fieldname": "priority", "label": "Priority", "fieldtype": "Select", "options": "Low\nMedium\nHigh", "default": "Medium", "in_list_view": 1},
+  {"fieldname": "attachment", "label": "Scanned Document", "fieldtype": "Attach Image", "reqd": 1},
+  {"fieldname": "related_correspondence", "label": "Related Correspondence", "fieldtype": "Link", "options": "Correspondence"}
+ ],
+ "permissions": [
+  {"role": "Correspondences Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1},
+  {"role": "Correspondences User", "read": 1, "write": 1, "create": 1, "submit": 0, "cancel": 0, "delete": 0, "if_owner": 1}
+ ],
+ "is_submittable": 1,
+ "workflow_state_field": "status",
+ "allow_rename": 1
+}

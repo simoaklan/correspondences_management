@@ -1,0 +1,12 @@
+{
+ "doctype": "Notification",
+ "name": "Correspondence Due Date Reminder",
+ "document_type": "Correspondence",
+ "subject": "REMINDER: Action required for Correspondence {{ doc.name }}",
+ "message": "This is a reminder that the correspondence '{{ doc.subject }}' is due tomorrow.",
+ "event": "Days Before",
+ "days_before": 1,
+ "date_field": "due_date",
+ "condition": "doc.status not in ['Closed', 'Archived']",
+ "recipients": [{"receiver_by_document_field": "assigned_to"}]
+}

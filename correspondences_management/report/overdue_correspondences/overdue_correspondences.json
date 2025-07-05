@@ -1,0 +1,7 @@
+{
+ "doctype": "Report",
+ "name": "Overdue Correspondences",
+ "ref_doctype": "Correspondence",
+ "report_type": "Report Builder",
+ "is_standard": "Yes"
+}
